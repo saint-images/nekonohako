@@ -1,9 +1,19 @@
-class nekonohako:
+from lib.catbox import Catbox
 
-    REQUEST_URL = 'https://catbox.moe/user/api.php'
 
-    def __init__(self, config):
-        self.user_hash = config['user_hash']
+class NekoNoHako:
+    instances = {}
 
-    def test(self):
-        print(self.user_hash)
+    @staticmethod
+    def get(user_hash='') -> Catbox:
+        if user_hash not in NekoNoHako.instances:
+            config = {
+                'user_hash': user_hash
+            }
+            NekoNoHako.instances[user_hash] = Catbox(config)
+
+        return NekoNoHako.instances[user_hash]
+
+
+nknh = NekoNoHako.get('b81569b19e1bbbd316c48fa97')
+nknh.upload_url('https://i.imgur.com/4QSOBiJ.jpg')
