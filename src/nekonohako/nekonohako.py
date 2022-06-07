@@ -13,4 +13,3 @@ class NekoNoHako:
             NekoNoHako.instances[user_hash] = Catbox(config)
 
         return NekoNoHako.instances[user_hash]
-

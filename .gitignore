@@ -130,3 +130,6 @@ dmypy.json
 
 # Idea
 .idea
+
+# Test
+/src/nekonohako/test.py
