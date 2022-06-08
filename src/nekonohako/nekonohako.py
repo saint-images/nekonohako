@@ -1,4 +1,4 @@
-from core.catbox import Catbox
+from .core.catbox import Catbox
 
 
 class NekoNoHako:
